@@ -1,0 +1,24 @@
+// 使用 proto3 版本
+syntax = "proto3";
+// 定义包名
+package helloworld;
+
+// 定义Hello服务
+service Hello {
+    // 定义 sayHello 方法
+    rpc sayHello (HelloReq) returns (HelloRes);
+}
+
+// 定义 sayHello 方法的传值
+message HelloReq {
+    // 传入 name，1表示第一个参数
+    string name = 1;
+    // 传入 age，2表示第二个参数
+    int32 age = 2;
+    // 传入 job
+    string job = 3;
+}
+
+message HelloRes {
+    string message = 1;
+}
